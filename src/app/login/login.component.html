@@ -1,17 +1,51 @@
 <div class="signup">
     <div class="signup-classic">
         <h1>Login As {{user}}</h1>
-       <form class="form">
+       <form class="form"  id="login-form"  [formGroup]="form">
         <fieldset class="username" >
-          <input type="text" placeholder="username" name="username"  />
+          <input
+          type="text"
+          formControlName="username"
+          name="username"
+          id="username"
+          class="form-control"
+        />
+        <div
+          *ngIf="form.controls['username']?.errors?.['errorMessage']!=null"
+        >
+          <p
+            class="alert alert-danger"
+            *ngIf="form.controls['username']?.touched"
+          >
+            {{ form.controls['username']?.errors?.['errorMessage'] }}
+          </p>
+        </div>
         </fieldset>
         <!-- [(ngModel)]="username" [(ngModel)]="password"  <fieldset class="email">
           <input type="email" placeholder="email" />
         </fieldset> -->
         <fieldset class="password">
-          <input type="password"  name="password" placeholder="password" />
+          <input
+          type="password"
+          formControlName="password"
+          name="password"
+          id="password"
+          class="form-control"
+        />
+        <div
+          *ngIf="form.controls['password']?.errors?.['errorMessage']!=null"
+        >
+          <p
+            class="alert alert-danger"
+            *ngIf="form.controls['password']?.touched"
+          >
+            {{ form.controls['password']?.errors?.['errorMessage'] }}
+          </p>
+        </div>
         </fieldset>
-        <button (click)="checklogin()" type="submit" class="btn">sign In</button>
+        <button  [disabled]="form.invalid" (click)="onLogin()" type="submit" class="btn">sign In</button>
+        <button  routerLink="/home" type="submit" class="btn">cancel</button> 
+        <button *ngIf="user==='patient'" routerLink="/patient-registration" type="submit" class="btn">sign Up As Patient</button>
        </form> 
     </div>
     <div class="signup-connect">

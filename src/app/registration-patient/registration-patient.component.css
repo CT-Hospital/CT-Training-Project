@@ -21,7 +21,9 @@
     
     
     .card {
-    background: #eaeaea;
+    background:white;
+   
+    
     }
     
     
@@ -73,4 +75,11 @@
     
     .example-full-width {
       width: 100%;
+    }
+  
+    section
+    {
+      background-image: url("../../assets/bg2-home.jfif");
+      align-items: center;
+      height: 100%;
     }

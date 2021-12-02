@@ -7,7 +7,7 @@
             style="border-radius: 15px"
           >
             <div class="card-body">
-              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Patient Registration</h3>
+              <h3 class="mb-4 offset-md-3  pb-2 pb-md-0 mb-md-5 " style="align-content: center;">Register Patient</h3>
               <form [formGroup]="form">
                 <div class="row">
                   <div class="col-md-4 mb-4 d-flex align-items-center">
@@ -190,6 +190,7 @@
                           type="password"
                           matInput
                           placeholder=""
+                          
                         />
                       </mat-form-field>
                     </div>
@@ -223,7 +224,7 @@
                       class="btn btn-danger btn-block"
                       type="cancel"
                       value="Cancel"
-                      routerLink="/login"
+                      routerLink="/home"
                     >
                       Cancel
                     </button>

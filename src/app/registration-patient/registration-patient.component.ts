@@ -58,6 +58,8 @@ export class RegistrationPatientComponent implements OnInit {
   {
     this.form.reset();
   }
+
+  
  
 
 }

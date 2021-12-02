@@ -7,9 +7,9 @@
   <div class="spacer"></div>
   <a href="" mat-button>AboutUs</a>
   <!-- <a href="" mat-raised-button>Sign Out</a> -->
-  <button mat-button [matMenuTriggerFor]="menu">Kuldeep</button>
+  <button mat-button [matMenuTriggerFor]="menu"> {{authService.getUserLoggedInName()}}</button>
 <mat-menu #menu="matMenu">
-  <button mat-menu-item>Sign Out</button>
+  <button (click)="logout()" mat-menu-item>Sign Out</button>
   <!-- <button mat-menu-item>Item 2</button> -->
 </mat-menu>
 </mat-toolbar>

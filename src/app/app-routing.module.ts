@@ -4,6 +4,7 @@ import { AuthComponent } from './auth/auth.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { RegistrationPatientComponent } from './registration-patient/registration-patient.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'login/:user',
     component: LoginComponent,
+  },
+  {
+    path:'patient-registration',
+    component:RegistrationPatientComponent
   },
   {
     path:'admin',
