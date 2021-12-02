@@ -29,6 +29,7 @@ import { RegistrationPatientComponent } from './registration-patient/registratio
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import {MatInputModule} from '@angular/material/input';
     LoginComponent,
     DashboardComponent,
     RegistrationPatientComponent,
+    ErrorPageComponent,
   ],
   imports: [
     BrowserModule,
