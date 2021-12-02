@@ -1,18 +1,13 @@
 body {
     background-image: url("../../assets/bg2-home.jfif");
-  }
-  
-  .mainbox {
-    /* background-color: #95c2de;
-    margin: auto;
-    height: 600px;
-    width: 600px;
-    padding: 20%;
-    position: relative; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
   }
   
     .err {
-      color: #ffffff;
+      color: red;
       font-family: 'Nunito Sans', sans-serif;
       font-size: 11rem;
       position:absolute;
@@ -25,11 +20,11 @@ body {
     font-size: 8.5rem;
     left: 47%;
     top: 15%;
-    color: #ffffff;
+    color:red;
   }
   
    .err2 {
-      color: #ffffff;
+      color: red;
       font-family: 'Nunito Sans', sans-serif;
       font-size: 11rem;
       position:absolute;
@@ -55,3 +50,4 @@ body {
   a:hover {
     text-decoration: underline;
   }
+  

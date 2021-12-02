@@ -44,7 +44,7 @@
         </div>
         </fieldset>
         <button  [disabled]="form.invalid" (click)="onLogin()" type="submit" class="btn">sign In</button>
-        <button  routerLink="/home" type="submit" class="btn">cancel</button> 
+        <button class="btn-danger"  routerLink="/home" type="submit" class="btn">cancel</button> 
         <button *ngIf="user==='patient'" routerLink="/patient-registration" type="submit" class="btn">sign Up As Patient</button>
        </form> 
     </div>
