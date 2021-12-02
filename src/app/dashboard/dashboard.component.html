@@ -1,0 +1,26 @@
+<!-- <div *ngIf="isUserLogin()">
+  <app-header></app-header>
+ <div class="row" style="height: 100%;">
+    <div class="col-md-3" >
+        <app-sidenav></app-sidenav>
+    </div>
+  </div> -->
+<!-- <div class="col-md-3" >
+    <app-sidenav></app-sidenav>
+</div> 
+<app-sidenav></app-sidenav>
+</div> -->
+<!-- <app-header></app-header>
+
+<app-sidenav></app-sidenav> -->
+<!-- <span><router-outlet></router-outlet></span> -->
+<app-header></app-header>
+<mat-drawer-container>
+  <mat-drawer mode="side" opened>
+    <app-sidenav></app-sidenav>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-registration-patient></app-registration-patient>
+  </mat-drawer-content>
+</mat-drawer-container>
+<!-- <app-sidenav></app-sidenav> -->

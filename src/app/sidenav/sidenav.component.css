@@ -1,0 +1,18 @@
+.example-container {
+  height: 300px;
+  /* border: 1px solid rgba(0, 0, 0, 0.5); */
+}
+
+.example-sidenav-content {
+  display: flex;
+
+  align-items: flex-start;
+  /* justify-content: center; */
+}
+
+.togglebtn {
+  background-color: lightskyblue;
+}
+/*.example-sidenav {
+    padding: 20px;
+  } */

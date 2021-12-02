@@ -1,0 +1,262 @@
+<mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Patient Details</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <label>Name:</label>
+          </div>
+          <div class="col-sm">
+            <label>Date Of Birth:</label>
+          </div>
+          <div class="col-sm">
+            <label>Age:</label>
+          </div>
+        </div>
+        <div>
+          <div class="row">
+            <div class="col-sm">
+              <label>Gender:</label>
+            </div>
+            <div class="col-sm">
+              <label>Race:</label>
+            </div>
+            <div class="col-sm">
+              <label>Ethnicity:</label>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="row">
+            <div class="col-sm">
+              <label>Languages Known:</label>
+            </div>
+            <div class="col-sm">
+              <label>Email:</label>
+            </div>
+            <div class="col-sm">
+              <label>Contact:</label>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="row">
+            <div class="col-sm">
+              <label>Home Address:</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h4 style="font-weight: bold">
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>Emergency Contact Information
+      </h4>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <label>Name:</label>
+          </div>
+          <div class="col-sm">
+            <label>Relationship:</label>
+          </div>
+          <div class="col-sm">
+            <label>Email:</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm">
+            <label>Contact:</label>
+          </div>
+          <div class="col-sm">
+            <label>Address:</label>
+          </div>
+        </div>
+      </div>
+      <mat-card-actions align="end">
+        <button mat-raised-button color="primary">Edit</button>
+        <button mat-raised-button color="primary">Save</button>
+      </mat-card-actions>
+    </mat-card-content>
+  </mat-card>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Visit Details</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="fill">
+            <mat-label>Height</mat-label>
+            <input
+              type="number"
+              min="0"
+              max="250"
+              matInput
+              required
+              placeholder="in CMs"
+            />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="fill">
+            <mat-label>Weight</mat-label>
+            <input type="number" min="0" max="250" step=".01" matInput required />
+          </mat-form-field>
+        </div>
+        <div class="col-sm-2 col-md-6 col-lg-3">
+          <mat-form-field appearance="fill">
+            <mat-label>Blood Pressure</mat-label>
+            <input type="number" matInput required />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="fill">
+            <mat-label>Body Temparature</mat-label>
+            <input type="number" matInput required />
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="fill">
+            <mat-label>Respiration Rate</mat-label>
+            <input type="number" matInput required />
+          </mat-form-field>
+        </div>
+      </div>
+      <mat-card-actions align="end">
+        <button mat-raised-button color="primary">Download</button>
+      </mat-card-actions>
+    </mat-card-content>
+  </mat-card>
+  <form [formGroup]="diagnosisForm">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Diagnosis</mat-card-title>
+      </mat-card-header>
+      <div
+        formArrayName="diagnosis"
+        *ngFor="
+          let diagno of diagnosisForm.get('diagnosis')?.value;
+          let i = index
+        "
+      >
+        <div [formGroupName]="i">
+          <div class="row">
+            <div class="col">
+              <mat-form-field appearance="fill">
+                <mat-label>Diagnosis</mat-label>
+                <input matInput required formControlName="diagnosisId" />
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field appearance="fill">
+                <mat-label>Description</mat-label>
+                <input matInput required formControlName="diagnosisDesc" />
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <button
+                *ngIf="diagnosisForm.get('diagnosis')?.value?.length > 1"
+                (click)="deleteDiagnosis(i)"
+              >
+                <mat-icon color="warn">delete</mat-icon>
+              </button>
+              <button (click)="addDiagnosis()">
+                <mat-icon color="primary">add_circle</mat-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </form>
+  <form [formGroup]="proceduresForm">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Procedures</mat-card-title>
+      </mat-card-header>
+      <div
+        formArrayName="procedures"
+        *ngFor="
+          let diagno of proceduresForm.get('procedures')?.value;
+          let i = index
+        "
+      >
+        <div [formGroupName]="i">
+          <div class="row">
+            <div class="col">
+              <mat-form-field appearance="fill">
+                <mat-label>Procedures</mat-label>
+                <input matInput required formControlName="procedure" />
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field appearance="fill">
+                <mat-label>Description</mat-label>
+                <p><input matInput required formControlName="desc" /></p>
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <button
+                *ngIf="proceduresForm.get('procedures')?.value?.length > 1"
+                (click)="deleteProcedure(i)"
+              >
+                <mat-icon color="warn">delete</mat-icon>
+              </button>
+              <button (click)="addProcedure()">
+                <mat-icon color="primary">add_circle</mat-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </form>
+  <form [formGroup]="medicationForm">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Medication</mat-card-title>
+      </mat-card-header>
+      <div
+        formArrayName="medications"
+        *ngFor="
+          let diagno of medicationForm.get('medications')?.value;
+          let i = index
+        "
+      >
+        <div [formGroupName]="i">
+          <div class="row">
+            <div class="col">
+              <mat-form-field appearance="fill">
+                <mat-label>Medication</mat-label>
+                <input matInput required formControlName="medication" />
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field appearance="fill">
+                <mat-label>Dosage</mat-label>
+                <input matInput required formControlName="dosage" />
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field appearance="fill">
+                <mat-label>Description</mat-label>
+                <p><input matInput required formControlName="desc" /></p>
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <button
+                *ngIf="medicationForm.get('medications')?.value?.length > 1"
+                (click)="deleteMedication(i)"
+              >
+                <mat-icon color="warn">delete</mat-icon>
+              </button>
+              <button (click)="addMedication()">
+                <mat-icon color="primary">add_circle</mat-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </form>

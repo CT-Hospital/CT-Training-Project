@@ -1,0 +1,141 @@
+<div class="reisterContainer">
+  <div class="container">
+    <div class="text-center mt-5">
+      <h1>Register Employee</h1>
+    </div>
+    <div class="row">
+      <div class="col-lg-7 mx-auto">
+        <div class="card mt-2 mx-auto p-4 bg-light">
+          <div class="card-body bg-light">
+            <div class="container">
+              <form [formGroup]="registerEmployeeForm" id="contact-form">
+                <div class="controls">
+                  <div class="row">
+                    <mat-radio-group
+                    formControlName="title"
+                    aria-label="Select an option"
+                  >
+                    <mat-radio-button
+                      *ngFor="let option of options"
+                      [value]="option"
+                      >{{ option }}</mat-radio-button
+                    >
+                  </mat-radio-group>
+
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label for="Form_title">Title : </label>
+                        <input type="radio" name="form_title" value="Mr" />Mr.
+                        <input type="radio" name="form_title" value="Ms" />Ms.
+                        <input type="radio" name="form_title" value="Mrs" />Mrs.
+                        <input type="radio" name="form_title" value="Dr" />Dr.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="form_name">Firstname *</label>
+                        <input
+                          id="form_name"
+                          type="text"
+                          name="name"
+                          class="form-control"
+                          placeholder="Please enter your firstname *"
+                          formControlName="firstname"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="form_lastname">Lastname *</label>
+                        <input
+                          id="form_lastname"
+                          type="text"
+                          name="lastname"
+                          class="form-control"
+                          placeholder="Please enter your lastname *"
+                          formControlName="lastname"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="form_email">Email *</label>
+                        <input
+                          id="form_email"
+                          type="email"
+                          name="email"
+                          class="form-control"
+                          placeholder="Please enter your email *"
+                          formControlName="email"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="form_dob">DOB *</label>
+                        <input
+                          id="form_dob"
+                          type="date"
+                          name="dob"
+                          class="form-control"
+                          placeholder="Please enter your email *"
+                          formControlName="Dob"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="form_role">Role *</label>
+                        <select
+                          id="form_role"
+                          name="need"
+                          class="form-control"
+                          formControlName="role"
+                        >
+                          <option value="" selected disabled>
+                            --Select Your Role--
+                          </option>
+                          <option>Admin</option>
+                          <option>Physician</option>
+                          <option>Nurse</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="form_employeeId">Employee ID *</label>
+                        <input
+                          id="form_employeeId"
+                          type="text"
+                          name="employeeId"
+                          class="form-control"
+                          placeholder="Please enter your EmployeeId"
+                          formControlName="employeeId"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                      <input
+                        type="submit"
+                        class="btn btn-success btn-send pt-2 btn-block"
+                        value="Register Employee"
+                        (click)="onSubmit()"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- /.8 -->
+      </div>
+      <!-- /.row-->
+    </div>
+  </div>
+</div>
